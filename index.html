@@ -70,47 +70,20 @@
           <!-- QUI vanno stampati i contatti -->
           <div class="contact-list w-100 h-100 d-flex flex-column   ">
             
-            <div class="contact d-flex">
+            <div v-for="(contact, index) in contacts" class="contact d-flex">
 
-              <img src="img/avatar_5.jpg" alt="">
+              <img :src="contact.avatar" alt="">
 
               <div>
-                <span>Michele</span>
+                <span>{{contact.name}}</span>
                 <br>
-                <span class="small-grey-text">Ultimo messaggio inviato</span>
+                <span class="small-grey-text">{{}}</span>
               </div>
 
               <div class="ms-auto pe-1  small-grey-text">12.30</div>
               
             </div>
 
-            <div class="contact d-flex">
-
-              <img src="img/avatar_5.jpg" alt="">
-
-              <div>
-                <span>Michele</span>
-                <br>
-                <span class="small-grey-text">Ultimo messaggio inviato</span>
-              </div>
-
-              <div class="ms-auto pe-1  small-grey-text">12.30</div>
-              
-            </div>
-
-            <div class="contact d-flex">
-
-              <img src="img/avatar_5.jpg" alt="">
-
-              <div>
-                <span>Michele</span>
-                <br>
-                <span class="small-grey-text">Ultimo messaggio inviato</span>
-              </div>
-
-              <div class="ms-auto pe-1  small-grey-text">12.30</div>
-              
-            </div>
 
           </div>
 
