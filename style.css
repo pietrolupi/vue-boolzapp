@@ -26,27 +26,29 @@ img{
   margin: 0 auto;
   min-width: 900px;
   min-height: 600px;
-  border: 2px solid black;
+  
   margin-top: 1.5%;
   padding: 0;
   background-color: white;
 
 }
 
+/* SEZIONE SINISTRAAAAAA */
+
 .left-section{
-  border: 2px solid black;
+  
   height: 100%;
   width: 35%;
 }
 
 .right-section{
-  border: 2px solid black;
+  
   height: 100%;
   width: 65%;
 }
 
 .top-bar{
-  border: 2px solid black;
+  border: 1px solid rgba(128, 128, 128, 0.233);
   height: 70px ;
   padding: 0 12px;
 }
@@ -78,6 +80,7 @@ img{
   color:#818181 ;
 }
 
+/* ------------------------------------------ */
 
 /* SEARCHBAR */
 
@@ -121,7 +124,7 @@ input[type="search"] {
 
 .left-contact-section .scrollbar-prep{
   width: 8px;
-  border: 1px solid black; 
+  
   height: calc(100% - 198px);
   position: absolute;
   right: 0;
@@ -133,8 +136,8 @@ input[type="search"] {
 
 .left-contact-section .contact-list{ 
   height: 100%;
-  overflow: scroll;
-  padding-right: 8px;
+  overflow-y: scroll;
+  
   width: 100%;
   z-index: 999;
 
@@ -147,4 +150,63 @@ input[type="search"] {
 
 .contact img {
   margin-right: 10px;
+}
+
+/* ///SEZIONE SINISTRA------------- */
+
+
+/* SEZIONE DESTRAAA ----------------*/
+
+.right-section .bot-section{
+  height: 65px;
+  width: 100%;
+  border: 1px solid rgba(128, 128, 128, 0.182);
+}
+
+.right-section .main-section{
+  width: 100%;
+  height:calc(100% - 135px) ;
+  background-image: url(/img/mine.jpg);
+  overflow-y: scroll;
+}
+
+.right-section .bot-section i {
+  font-size: 1.55rem;
+  
+  color: grey;
+  cursor: pointer;
+}
+
+.right-section .main-section .container{
+  
+  height: 90%;
+  width: 80%;
+}
+
+.right-section .message{
+  width: 310px ;
+  
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 16px 10px;
+  position: relative;
+}
+
+.message.mine{
+  float: right;
+  margin-left: calc(100% - 310px);
+  background-color: #d5f9ba;
+  
+}
+
+.message.not-mine{
+  float: left;
+  background-color: white;
+}
+
+.message .msg-time{
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  font-size: 0.6rem;
 }
