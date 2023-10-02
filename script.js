@@ -173,7 +173,8 @@ createApp({
     ],
 
     last: '',
-    indexSel: 0
+    indexSel: 0,
+    newMessage: 'ciaooo'
     
     
     
@@ -208,6 +209,27 @@ createApp({
         contact.visible = true
         console.log(contact.visible);
         
+      },
+
+      pushNewMessage(index){
+
+        
+        this.contacts[index].messages.push( {
+          date: '10/01/2020 15:30:55',
+          message: this.newMessage,
+          status: 'sent'
+        })
+
+        this.newMessage = ''
+        console.log(this.newMessage);
+
+        setTimeout(()=>{
+          this.contacts[index].messages.push( {
+            date: '10/01/2020 15:30:55',
+            message: 'AHAHAHAHAHAH SI',
+            status: 'received'
+          })
+        },2000)
       }
 
       
