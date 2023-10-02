@@ -110,6 +110,28 @@ input[type="search"] {
 .left-contact-section{
 
   height: calc(100% - 198px);
-  background-color: red;
+  position: relative;
+  
+}
+
+.left-contact-section .scrollbar-prep{
+  width: 8px;
+  border: 1px solid black; 
+  height: calc(100% - 198px);
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: lightgray;
+  z-index: 998;
+  
+}
+
+.left-contact-section .contact-list{
+  
+  
+  height: 100%;
   overflow: scroll;
+  padding-right: 15px;
+  width: 100%;
+  z-index: 999;
 }
