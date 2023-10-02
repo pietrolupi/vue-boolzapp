@@ -70,7 +70,9 @@
           <!-- QUI vanno stampati i contatti -->
           <div class="contact-list w-100 h-100 d-flex flex-column   ">
             
-            <div v-for="(contact, index) in contacts" class="contact d-flex">
+            <div v-for="(contact, index) in contacts" 
+            @click = "indexSel = index"
+            class="contact d-flex">
 
               <img :src="contact.avatar" alt="">
 
@@ -132,9 +134,17 @@
 
           <div class="container">
 
+          
+            <div v-for="(message,index) in contacts[indexSel].messages">
+              <div class="message"
+              :class=" message.status === 'sent' ? 'mine' : 'not-mine'">{{message.message}}
             
+              <span class="msg-time small-grey-text">12.30</span>
+            
+              </div>
+            </div>
               
-            <div class="message mine">
+           <!--  <div class="message mine">
               <span>CIAOOOO</span>
               <span class="msg-time small-grey-text">12.30</span>
             </div>
@@ -143,34 +153,12 @@
             <div class="message not-mine">
               <span>CIAOOOO</span>
               <span class="msg-time small-grey-text">12.30</span>
-            </div>
+            </div> -->
 
-              
-            <div class="message mine">
-              <span>CIAOOOO</span>
-              <span class="msg-time small-grey-text">12.30</span>
-            </div>
-            
-
-            <div class="message not-mine">
-              <span>CIAOOOO</span>
-              <span class="msg-time small-grey-text">12.30</span>
-            </div>
-                
-            <div class="message mine">
-              <span>CIAOOOO</span>
-              <span class="msg-time small-grey-text">12.30</span>
-            </div>
-            
-
-            <div class="message not-mine">
-              <span>CIAOOOO</span>
-              <span class="msg-time small-grey-text">12.30</span>
-            </div>
-            
+      
 
           </div>
-
+          
 
 
 <!-- --------------------------------------- -->         
