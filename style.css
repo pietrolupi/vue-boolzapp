@@ -1,0 +1,37 @@
+.red{
+  color: red;
+}
+
+body{
+
+  background: rgb(216,219,213);
+  background: linear-gradient(0deg, rgba(216,219,213,1) 88%, rgba(0,150,128,1) 88%); 
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container-custom{
+  height: 94%;
+  width: 80%;
+  margin: 0 auto;
+  min-width: 900px;
+  min-height: 600px;
+  border: 2px solid black;
+  margin-top: 1.5%;
+  padding: 0;
+
+}
+
+.left-section{
+  border: 2px solid black;
+  height: 100%;
+  width: 35%;
+}
+
+.right-section{
+  border: 2px solid black;
+  height: 100%;
+  width: 65%;
+}
+
