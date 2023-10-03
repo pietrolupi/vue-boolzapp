@@ -31,6 +31,7 @@ createApp({
                 }
             ],
         },
+
         {
             name: 'Fabio',
             avatar: './img/avatar_2.jpg',
@@ -53,6 +54,7 @@ createApp({
                 }
             ],
         },
+
         {
             name: 'Samuele',
             avatar: './img/avatar_3.jpg',
@@ -75,6 +77,7 @@ createApp({
                 }
             ],
         },
+
         {
             name: 'Alessandro B.',
             avatar: './img/avatar_4.jpg',
@@ -92,6 +95,7 @@ createApp({
                 }
             ],
         },
+
         {
             name: 'Alessandro L.',
             avatar: './img/avatar_5.jpg',
@@ -174,10 +178,7 @@ createApp({
 
     last: '',
     indexSel: 0,
-    newMessage: 'ciaooo'
-    
-    
-    
+    newMessage: ''
     
      
     }
@@ -200,8 +201,6 @@ createApp({
 
       selectUser(contact){
 
-        
-        
         this.contacts.forEach((element)=>
         element.visible = false)
         console.log(contact.visible);
@@ -215,7 +214,7 @@ createApp({
 
         
         this.contacts[index].messages.push( {
-          date: '10/01/2020 15:30:55',
+          date: this.getDate(),
           message: this.newMessage,
           status: 'sent'
         })
@@ -225,22 +224,40 @@ createApp({
 
         setTimeout(()=>{
           this.contacts[index].messages.push( {
-            date: '10/01/2020 15:30:55',
-            message: 'AHAHAHAHAHAH SI',
+            date: this.getDate(),
+            message: 'AHAHAHAHAHAH',
             status: 'received'
           })
         },2000)
-      }
+      },
 
+      getDate(){
+        var currentdate = new Date();
+        var datetime = (currentdate.getDay() + 1).toString() + '/' + (currentdate.getMonth() + 1).toString() + '/'+ (currentdate.getFullYear()).toString() + ' ' + currentdate.getHours().toString().padStart(2,'0') + ":" 
+        + currentdate.getMinutes().toString().padStart(2,'0') + ':' + currentdate.getSeconds().toString().padStart(2,'0');
+
+        return datetime;
+     
+      },
+
+      getTimeFromDate(date){
+        const fullHour = date.split(' ')[1]
+        const hourMin = fullHour.substr(0,5)
+        return hourMin
+      },
       
+      getLastDate(index){
+
+        last = this.contacts[index].messages.length
+        
+        return this.getTimeFromDate(this.contacts[index].messages[last - 1].date)
+
+      }
     },
 
-    
-  
 
   mounted(){
     
-    console.log('ciaoooooooooo');
-    console.log(this.contacts[1].messages.length);
+    
   }
 }).mount('#app')

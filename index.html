@@ -26,8 +26,8 @@
         <div class="top-bar bg-lgrey d-flex justify-content-between align-items-center  ">
 
           <div class="left">
-            <img src="img/avatar_1.jpg" alt="">  
-            <span>Gianfrancesco</span>
+            <img class="me-3 " src="img/avatar_1.jpg" alt="">  
+            <span>Pietro Lupi</span>
           </div>
 
           <div class="right">
@@ -82,7 +82,7 @@
                 <span class="small-grey-text">{{getLastMessage(index)}}</span>
               </div>
 
-              <div class="ms-auto pe-1  small-grey-text">12.30</div>
+              <div class="ms-auto pe-1  small-grey-text">{{getLastDate(index)}}</div>
               
             </div>
 
@@ -109,12 +109,12 @@
         <div class="top-bar bg-lgrey d-flex justify-content-between align-items-center ">
 
           <div class="left d-flex">
-            <img src="img/avatar_1.jpg" alt=""> 
+            <img class="me-3" :src="contacts[indexSel].avatar" alt=""> 
 
             <div >
-              <span>Gianfrancesco</span>
+              <span>{{contacts[indexSel].name}}</span>
               <br>
-              <span class="small-grey-text">ultimo accesso oggi alle 12.38</span>
+              <span class="small-grey-text">ultimo accesso oggi alle {{getLastDate(indexSel)}}</span>
             </div> 
           </div>
 
@@ -139,21 +139,12 @@
               <div class="message"
               :class=" message.status === 'sent' ? 'mine' : 'not-mine'">{{message.message}}
             
-              <span class="msg-time small-grey-text">12.30</span>
+              <span class="msg-time small-grey-text me-2 ">{{getTimeFromDate(message.date)}}</span>
             
               </div>
             </div>
               
-           <!--  <div class="message mine">
-              <span>CIAOOOO</span>
-              <span class="msg-time small-grey-text">12.30</span>
-            </div>
-            
-
-            <div class="message not-mine">
-              <span>CIAOOOO</span>
-              <span class="msg-time small-grey-text">12.30</span>
-            </div> -->
+         
 
       
 
