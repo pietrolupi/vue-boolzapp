@@ -176,11 +176,13 @@ createApp({
         }
     ],
 
-    last: '',
+    last: 0,
     indexSel: 0,
     newMessage: '',
 
-    searchText: ''
+    searchText: '',
+
+    
     
      
     }
@@ -191,13 +193,19 @@ createApp({
     
       getLastMessage(index){
         last = this.contacts[index].messages.length
-        
-        if(this.contacts[index].messages[last - 1].status === 'sent'){
-
-          return 'Tu: ' + this.contacts[index].messages[last - 1].message
+        if(last === 0){
+            return 'Nessun messaggio...'
         }else{
 
-          return this.contacts[index].name + ': ' + this.contacts[index].messages[last - 1].message
+            if(this.contacts[index].messages[last - 1].status === 'sent'){
+    
+              return 'Tu: ' + this.contacts[index].messages[last - 1].message
+            }else{
+    
+              return this.contacts[index].name + ': ' + this.contacts[index].messages[last - 1].message
+            }
+
+
         }
       },
 
@@ -249,16 +257,20 @@ createApp({
       },
       
       getLastDate(index){
-
+        //MODIFICA QUIIIIIIIIIIIIIIIIIIII
         last = this.contacts[index].messages.length
-        
-        return this.getTimeFromDate(this.contacts[index].messages[last - 1].date)
+        if(last === 0){
+            return ''
+        }else{
+
+            return this.getTimeFromDate(this.contacts[index].messages[last - 1].date)
+        }
 
       },
 
       removeMessage(index){
         console.log(this.contacts[this.indexSel].messages.splice(index,1));
-        
+        console.log('last value' + this.last)
       }
 
       
