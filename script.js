@@ -184,7 +184,19 @@ createApp({
 
     isLoading: false,
 
-    loadingList: []
+    loadingList: [],
+
+    answerList: [
+        'AHAHAHAHAHAHAHAH',
+        'Sorry non mi interessa',
+        'ok ok capito, ma sabato che fai?',
+        'Ooooook! ',
+        'Interessante',
+        'Ciao, che piacere sentirti!',
+        'No vabbeh non ci credo!',
+        'mmm boh...',
+        'pardon ma ora mi becchi in un momentaccio.'
+    ]
     
      
     }
@@ -245,7 +257,7 @@ createApp({
         setTimeout(()=>{
           this.contacts[index].messages.push( {
             date: this.getDate(),
-            message: 'AHAHAHAHAHAH',
+            message: this.answerList[this.random(this.answerList.length)],
             status: 'received',
           })
           this.loadingList.pop() ///QUIIIIIII
@@ -296,7 +308,11 @@ createApp({
 
 
   mounted(){
-    
-    console.log()
+
+    console.log(this.random(4));
+    console.log(this.random(4));
+    console.log(this.random(4));
+    console.log(this.random(4));
+    console.log(this.random(4));
   }
 }).mount('#app')
