@@ -250,7 +250,7 @@ input[type="search"] {
 .custom-drop{
   position: absolute;
   top: -4px;
-  right: 5px;
+  right: -2px;
   display: none;
 }
 

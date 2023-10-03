@@ -284,6 +284,11 @@ createApp({
       removeMessage(index){
         console.log(this.contacts[this.indexSel].messages.splice(index,1));
         console.log('last value' + this.last)
+      },
+
+      random(max){
+            return Math.floor(Math.random() * max);
+        
       }
 
       
@@ -292,6 +297,6 @@ createApp({
 
   mounted(){
     
-    
+    console.log()
   }
 }).mount('#app')
