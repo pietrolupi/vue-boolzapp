@@ -1,19 +1,16 @@
-.red{
-  color: red;
-}
-.bg-lgrey{
-  background-color: #eaeaea;
-}
+
 
 body{
-  
+  font-family: 'Lato', sans-serif;
   background: rgb(216,219,213);
   background: linear-gradient(0deg, rgba(216,219,213,1) 88%, rgba(0,150,128,1) 88%); 
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
-
- 
+   
+}
+.bg-lgrey{
+  background-color: #eaeaea;
 }
 
 img{
@@ -169,7 +166,8 @@ input[type="search"] {
 }
 
 .left-section .contact:hover span{
-  color: white;
+  color: black;
+  
 }
 
 .contact img {
@@ -216,6 +214,12 @@ input[type="search"] {
   position: relative;
 }
 
+.message.loading-points{
+  width: 180px;
+  font-style: italic;
+  padding-left: 20px;
+}
+
 .message.mine{
   float: right;
   margin-left: calc(100% - 310px);
@@ -256,4 +260,10 @@ input[type="search"] {
 
 .custom-drop:hover i{
   color: black;
+}
+
+.contact .is-writing{
+  font-style: italic;
+  color: #818181;
+
 }

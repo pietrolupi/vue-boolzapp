@@ -182,7 +182,9 @@ createApp({
 
     searchText: '',
 
-    
+    isLoading: false,
+
+    loadingList: []
     
      
     }
@@ -230,15 +232,26 @@ createApp({
         })
 
         this.newMessage = ''
-        console.log(this.newMessage);
+        
+
+        setTimeout(()=>{
+            this.loadingList.unshift();
+            this.isLoading = true;
+            this.loadingList.unshift(index) //QUIIIIIII
+        },2000);
+
+        
 
         setTimeout(()=>{
           this.contacts[index].messages.push( {
             date: this.getDate(),
             message: 'AHAHAHAHAHAH',
-            status: 'received'
+            status: 'received',
           })
-        },2000)
+          this.loadingList.pop() ///QUIIIIIII
+          this.isLoading = false
+          
+        },5500)
       },
 
       getDate(){
