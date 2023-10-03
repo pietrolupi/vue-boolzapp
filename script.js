@@ -178,7 +178,9 @@ createApp({
 
     last: '',
     indexSel: 0,
-    newMessage: ''
+    newMessage: '',
+
+    searchText: ''
     
      
     }
@@ -252,7 +254,9 @@ createApp({
         
         return this.getTimeFromDate(this.contacts[index].messages[last - 1].date)
 
-      }
+      },
+
+      
     },
 
 

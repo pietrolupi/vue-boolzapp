@@ -56,7 +56,12 @@
           
           <div class="custom-search-container  _bgrey rounded d-flex align-items-center ">
             <a href="#" class="_b"><i class="fa-solid fa-magnifying-glass ms-2"></i></a>
-            <input type="search" placeholder="Cerca o inizia una nuova chat" class="border-0 w-100 mx-2 _bgrey">
+
+            <!-- input di ricerca collegato al v-if sottostante -->
+            <input v-model="searchText" type="search" placeholder="Cerca o inizia una nuova chat" class="border-0 w-100 mx-2 _bgrey">
+          
+          
+          
           </div>
           
         </div>
@@ -67,24 +72,32 @@
         <div class="left-contact-section d-flex  ">
 
           
-          <!-- QUI vanno stampati i contatti -->
+          <!-- QUI vengono stampati i contatti -->
           <div class="contact-list w-100 h-100 d-flex flex-column   ">
-            
-            <div v-for="(contact, index) in contacts" 
-            @click = "indexSel = index"
-            class="contact d-flex">
 
-              <img :src="contact.avatar" alt="">
 
-              <div>
-                <span>{{contact.name}}</span>
-                <br>
-                <span class="small-grey-text">{{getLastMessage(index)}}</span>
+
+            <div v-for="(contact, index) in contacts" >
+
+              <!-- funzione di ricerca collegata a input sopra che lavora su searchText -->
+              <div
+              v-if="contacts[index].name.toLowerCase().includes(searchText.toLowerCase())"
+              @click = "indexSel = index, searchText = ''"
+              class="contact d-flex">
+  
+                <img :src="contact.avatar" alt="">
+  
+                <div>
+                  <span>{{contact.name}}</span>
+                  <br>
+                  <span class="small-grey-text">{{getLastMessage(index)}}</span>
+                </div>
+  
+                <div class="ms-auto pe-1  small-grey-text">{{getLastDate(index)}}</div>
+                
               </div>
 
-              <div class="ms-auto pe-1  small-grey-text">{{getLastDate(index)}}</div>
-              
-            </div>
+            </div>            
 
 
           </div>
@@ -143,10 +156,6 @@
             
               </div>
             </div>
-              
-         
-
-      
 
           </div>
           
@@ -167,6 +176,7 @@
           <i class="fa-solid fa-microphone"></i>
         </div>
 
+        
         <!-- ----------  -->
 
       </div>
