@@ -234,3 +234,26 @@ input[type="search"] {
   bottom: 5px;
   font-size: 0.6rem;
 }
+
+
+.custom-drop button{
+  background-color: transparent !important;
+  border: none;
+  color: grey;
+  font-size: 0.8rem;
+}
+
+.custom-drop{
+  position: absolute;
+  top: -4px;
+  right: 5px;
+  display: none;
+}
+
+.message:hover .custom-drop{
+  display: block;
+}
+
+.custom-drop:hover i{
+  color: black;
+}

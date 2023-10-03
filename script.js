@@ -256,6 +256,11 @@ createApp({
 
       },
 
+      removeMessage(index){
+        console.log(this.contacts[this.indexSel].messages.splice(index,1));
+        
+      }
+
       
     },
 

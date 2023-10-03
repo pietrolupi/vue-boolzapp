@@ -98,7 +98,7 @@
               </div>
 
             </div>            
-
+            
 
           </div>
 
@@ -153,9 +153,23 @@
               :class=" message.status === 'sent' ? 'mine' : 'not-mine'">{{message.message}}
             
               <span class="msg-time small-grey-text me-2 ">{{getTimeFromDate(message.date)}}</span>
-            
+              
+              <div class="dropdown custom-drop">
+                <button class="btn btn-secondary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <ul class="dropdown-menu custom-show" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">Info Contatto</a></li>
+                  <li><a @click="removeMessage(index)" class="dropdown-item" href="#">Elimina messaggio</a></li>
+                  
+                </ul>
+              </div>
+
               </div>
             </div>
+
+            
+          
 
           </div>
           
