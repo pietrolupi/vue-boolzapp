@@ -206,19 +206,21 @@ createApp({
   methods: {
     
       getLastMessage(index){
-        const lastIndex = this.contacts
 
-        [index].messages.length
+        const contacts = this.contacts
+
+        const lastIndex = contacts[index].messages.length
+
         if(lastIndex === 0){
             return 'Nessun messaggio...'
         }else{
 
-            if(this.contacts[index].messages[lastIndex - 1].status === 'sent'){
+            if(contacts[index].messages[lastIndex - 1].status === 'sent'){
     
-              return 'Tu: ' + this.contacts[index].messages[lastIndex - 1].message
+              return 'Tu: ' + contacts[index].messages[lastIndex - 1].message
             }else{
     
-              return this.contacts[index].name + ': ' + this.contacts[index].messages[lastIndex - 1].message
+              return contacts[index].name + ': ' + contacts[index].messages[lastIndex - 1].message
             }
 
 
