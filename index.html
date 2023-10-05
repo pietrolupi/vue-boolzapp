@@ -182,7 +182,7 @@
             </div>
 
             <div
-             :class="!isLoading ? 'd-none' : ''"
+             v-if="loadingList.includes(indexSel)"
              class=" message loading-points not-mine">
               Sta scrivendo...
             </div>
